@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-Sp that's my personal website.
+So that's my personal website.
 I'm tired of wix so I'll try to make something here.
 <!--
 **leonard-mb/leonard-mb** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
