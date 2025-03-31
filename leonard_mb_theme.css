@@ -1,0 +1,179 @@
+/* Base styles with CSS variables for theme switching */
+:root {
+    --background: #111111;
+    --text: #ffff00;
+    --accent: #ffff00;
+    --link: #ffff00;
+    --link-hover: #ffffff;
+    --border: 4px solid #ffff00;
+    --shadow: 8px 8px 0 #ffff00;
+    --font-main: monospace, sans-serif;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --background: #ffff00;
+    --text: #111111;
+    --accent: #111111; 
+    --link: #111111;
+    --link-hover: #444444;
+    --border: 4px solid #111111;
+    --shadow: 8px 8px 0 #111111;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Brutalist headers */
+h1, h2, h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.brutalist-title {
+    font-size: 4rem;
+    letter-spacing: -0.05em;
+    border-bottom: var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Raw navigation */
+header {
+    margin-bottom: 3rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+nav li {
+    margin-right: 1.5rem;
+}
+
+nav a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    border: 2px solid var(--link);
+}
+
+/* Theme toggle button with brutalist styling */
+#theme-toggle {
+    background-color: var(--text);
+    color: var(--background);
+    border: var(--border);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s ease;
+}
+
+#theme-toggle:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--accent);
+}
+
+#theme-toggle:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+/* Main content areas */
+section {
+    margin-bottom: 4rem;
+    border: var(--border);
+    padding: 2rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: var(--border);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Project grid with brutalist aesthetics */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.project-item {
+    border: var(--border);
+    padding: 1rem;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--text);
+}
+
+/* Footer styling */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: var(--border);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments with brutalist approach */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .brutalist-title {
+        font-size: 2.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
