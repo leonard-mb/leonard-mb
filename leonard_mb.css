@@ -1,30 +1,98 @@
-/* Additional styles for blog and about pages */
+/* Theme variables and styling */
+:root {
+    --background: #111111;
+    --text: #ffff00;
+    --accent: #ffff00;
+    --link: #ffff00;
+    --link-hover: #ffffff;
+    --border: 4px solid #ffff00;
+    --shadow: 8px 8px 0 #ffff00;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --background: #ffff00;
+    --text: #111111;
+    --accent: #111111; 
+    --link: #111111;
+    --link-hover: #444444;
+    --border: 4px solid #111111;
+    --shadow: 8px 8px 0 #111111;
+}
+
+/* Apply theme colors */
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.brutalist-title {
+    border-bottom: var(--border);
+}
+
+nav a {
+    color: var(--link);
+}
+
+nav a:hover, nav a.active {
+    border: 2px solid var(--link);
+}
+
+/* Theme toggle button styling */
+#theme-toggle {
+    background-color: var(--text);
+    color: var(--background);
+    border: var(--border);
+    padding: 0.5rem 1rem;
+    font-family: monospace, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s ease;
+}
+
+#theme-toggle:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--accent);
+}
+
+#theme-toggle:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+/* Themed content sections */
+section {
+    border: var(--border);
+}
+
+.video-container {
+    border: var(--border);
+}
+
+.project-item {
+    border: var(--border);
+}
+
+.project-item img {
+    border: 2px solid var(--text);
+}
+
+footer {
+    border-top: var(--border);
+}
+
+/* Themed blog elements */
 .blog-post {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
     border-bottom: 2px solid var(--accent);
 }
 
-.blog-post:last-child {
-    border-bottom: none;
-}
-
-.post-meta {
-    margin-bottom: 1rem;
-    font-family: monospace;
-}
-
 .brutalist-button {
-    display: inline-block;
     background-color: var(--text);
     color: var(--background);
     border: 2px solid var(--text);
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-top: 1rem;
     box-shadow: 4px 4px 0 var(--accent);
-    transition: transform 0.1s ease;
 }
 
 .brutalist-button:hover {
@@ -32,33 +100,12 @@
     box-shadow: 6px 6px 0 var(--accent);
 }
 
-/* About page specific styles */
-.about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-}
-
-.contact-info ul {
-    list-style: none;
-}
-
-.contact-info li {
-    margin-bottom: 0.5rem;
-}
-
+/* Themed contact info */
 .contact-info a {
     color: var(--link);
-    text-decoration: none;
     border-bottom: 2px solid var(--link);
 }
 
 .contact-info a:hover {
     color: var(--link-hover);
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-    }
 }
