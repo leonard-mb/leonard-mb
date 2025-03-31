@@ -1,0 +1,64 @@
+/* Additional styles for blog and about pages */
+.blog-post {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.post-meta {
+    margin-bottom: 1rem;
+    font-family: monospace;
+}
+
+.brutalist-button {
+    display: inline-block;
+    background-color: var(--text);
+    color: var(--background);
+    border: 2px solid var(--text);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 0 var(--accent);
+    transition: transform 0.1s ease;
+}
+
+.brutalist-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--accent);
+}
+
+/* About page specific styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 2px solid var(--link);
+}
+
+.contact-info a:hover {
+    color: var(--link-hover);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
